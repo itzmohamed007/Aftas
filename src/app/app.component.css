@@ -1,0 +1,14 @@
+.bg-image {
+  background-image: url('../assets/imgs/background.png'); /* Replace with the actual path to your image */
+  background-size: cover; /* This property ensures that the image covers the entire element */
+  background-position: center; /* Center the image within the element */
+  /* You can add more properties like background-repeat, background-attachment, etc. if needed */
+  width: 100%; /* Set the width of the element */
+}
+.bg-blur {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+}
+.bg-blur-bold {
+  backdrop-filter: blur(64px);
+}

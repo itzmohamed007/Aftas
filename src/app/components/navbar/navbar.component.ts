@@ -7,5 +7,14 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   isOpen: boolean = false;
-
+  navigations:any[] = [
+    {
+      title: "Competitions",
+      path: "/competitions"
+    },
+    {
+      title: "Members",
+      path: "/members"
+    }
+  ]
 }

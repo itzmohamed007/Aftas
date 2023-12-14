@@ -1,0 +1,10 @@
+.bg-blur {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+.bg-image {
+  background-image: url('../../../assets/imgs/navbar-competition.jpg'); /* Replace with the actual path to your image */
+  background-size: cover; /* This property ensures that the image covers the entire element */
+  background-position: center; /* Center the image within the element */
+  width: 100%; /* Set the width of the element */
+}
