@@ -1,9 +1,13 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 .bg-image {
-  background-image: url('../assets/imgs/background.png'); /* Replace with the actual path to your image */
-  background-size: cover; /* This property ensures that the image covers the entire element */
-  background-position: center; /* Center the image within the element */
-  /* You can add more properties like background-repeat, background-attachment, etc. if needed */
-  width: 100%; /* Set the width of the element */
+  background-image: url('../assets/imgs/background.png');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
 }
 .bg-blur {
   background-color: rgba(255, 255, 255, 0.1);

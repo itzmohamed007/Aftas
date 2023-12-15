@@ -8,44 +8,36 @@ import { Component } from '@angular/core';
 export class CompetitionsComponent {
   testData: any[] = [
     {
-      code: "code",
-      location: "location",
-      date: "date",
-      startTime: "start time",
-      endTime: "end time",
-      numberOfParticipants: 10
+      code: "saf-12-12-23",
+      location: "safi",
+      date: "15-12-2023",
+      startTime: "09:41",
+      endTime: "019:41",
+      numberOfParticipants: 30
     },
     {
-      code: "code",
-      location: "location",
-      date: "date",
-      startTime: "start time",
-      endTime: "end time",
-      numberOfParticipants: 10
+      code: "saf-13-12-23",
+      location: "safi",
+      date: "15-12-2023",
+      startTime: "09:41",
+      endTime: "019:41",
+      numberOfParticipants: 20
     },
     {
-      code: "code",
+      code: "saf-12-12-23",
       location: "location",
-      date: "date",
-      startTime: "start time",
-      endTime: "end time",
-      numberOfParticipants: 10
+      date: "15-12-2023",
+      startTime: "09:41",
+      endTime: "019:41",
+      numberOfParticipants: 15
     },
     {
-      code: "code",
+      code: "saf-12-12-23",
       location: "location",
-      date: "date",
-      startTime: "start time",
-      endTime: "end time",
-      numberOfParticipants: 10
-    },
-    {
-      code: "code",
-      location: "location",
-      date: "date",
-      startTime: "start time",
-      endTime: "end time",
-      numberOfParticipants: 10
-    },
+      date: "15-12-2023",
+      startTime: "09:41",
+      endTime: "019:41",
+      numberOfParticipants: 25
+    }
   ]
 }
