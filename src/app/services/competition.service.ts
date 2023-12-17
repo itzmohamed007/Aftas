@@ -16,4 +16,8 @@ export class CompetitionService {
     `${this.url}?page=${page}&size=6&filter=${filter}`;
     return this.http.get<PaginationModel<Competition>>(`${this.url}?page=${page}&size=6&filter=${filter}`);
   }
+
+  createCompetition(competition:Competition):Observable<Competition> {
+    return this.http.post<Competition>(this.url, competition);
+  }
 }

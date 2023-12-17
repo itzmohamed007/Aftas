@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {CompetitionsComponent} from "./components/competitions/competitions.component";
 import {MembersComponent} from "./components/members/members.component";
-import {CompetitionComponent} from "./components/competition/competition.component";
+import {NewCompetitionComponent} from "./components/new-competition/new-competition.component";
 
 const routes: Routes = [
   {
@@ -14,8 +14,8 @@ const routes: Routes = [
     component: MembersComponent
   },
   {
-    path: "competition/:code",
-    component: CompetitionComponent
+    path: "new-competition",
+    component: NewCompetitionComponent
   }
 ];
 

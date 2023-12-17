@@ -7,7 +7,7 @@
         <option value="ongoing">On Going</option>
         <option value="finished">Finished</option>
       </select>
-      <button class="px-8 py-2 rounded-md text-white bg-indigo-500">Add</button>
+      <button routerLink="/new-competition" class="px-8 py-2 rounded-md text-white bg-indigo-500">Add</button>
     </div>
     <!--<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
       <table class="w-full bg-blur text-sm text-left text-gray-500">
@@ -43,7 +43,7 @@
             <p><span class="font-medium text-white">Start time: </span>{{ competition.startTime }}</p>
             <p><span class="font-medium text-white">End time: </span>{{ competition.endTime }}</p>
             <p><span class="font-medium text-white">Location: </span>{{ competition.location }}</p>
-            <p><span class="font-medium text-white">Participants number: </span>{{ competition.participantsNumber}}</p>
+            <p><span class="font-medium text-white">Participants number: </span>{{ competition.numberOfParticipants}}</p>
           </div>
         </div>
       </div>
@@ -59,4 +59,5 @@
       </div>
     </div>
   </div>
+  <div class="p-10"></div>
 </section>

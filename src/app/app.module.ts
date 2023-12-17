@@ -7,8 +7,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CompetitionsComponent } from './components/competitions/competitions.component';
 import { MembersComponent } from './components/members/members.component';
-import { CompetitionComponent } from './components/competition/competition.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { NewCompetitionComponent } from './components/new-competition/new-competition.component';
+import {DatePipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -16,15 +17,16 @@ import {FormsModule} from "@angular/forms";
     NavbarComponent,
     CompetitionsComponent,
     MembersComponent,
-    CompetitionComponent
+    NewCompetitionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
