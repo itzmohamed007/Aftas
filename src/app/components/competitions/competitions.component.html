@@ -1,7 +1,15 @@
-<section class="flex-col gap-20 w-full flex h-screen items-center p-10">
-  <h1 class="text-white text-4xl font-semi-bold mx-5">Competitions</h1>
+<section class="container mx-auto w-full h-screen p-10">
+  <h1 class="text-white text-center text-4xl font-semi-bold mb-10">Competitions</h1>
   <div class="w-full">
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <div class="w-full flex items-center justify-between px-5">
+      <select class="px-2 py-2 rounded-md text-white bg-indigo-500">
+        <option>All</option>
+        <option>On Going</option>
+        <option>Finished</option>
+      </select>
+      <button class="px-8 py-2 rounded-md text-white bg-indigo-500">Add</button>
+    </div>
+    <!--<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
       <table class="w-full bg-blur text-sm text-left text-gray-500">
         <thead class="text-gray-700 bg-blue-200">
         <tr>
@@ -24,6 +32,21 @@
         </tr>
         </tbody>
       </table>
+
+    </div>-->
+    <div class="grid">
+      <div class="p-5 grid lg:grid-cols-3 md:grid-cols-2 gap-5">
+        <div *ngFor="let test of testData" class="hover:cursor-pointer rounded-md border-2 border-blue-900 p-5 flex flex-col items-start justify-center bg-blur-bold">
+          <div class="text-white font-light hover:cursor-pointer">
+            <p><span class="font-medium text-white">Code: </span>{{ test.code }}</p>
+            <p><span class="font-medium text-white">Date: </span>{{ test.date }}</p>
+            <p><span class="font-medium text-white">Start time: </span>{{ test.startTime }}</p>
+            <p><span class="font-medium text-white">End time: </span>{{ test.endTime }}</p>
+            <p><span class="font-medium text-white">Location: </span>{{ test.location }}</p>
+            <p><span class="font-medium text-white">Participants number: </span>{{ test.numberOfParticipants}}</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
