@@ -1,11 +1,11 @@
 <section class="container mx-auto w-full h-screen p-10">
   <h1 class="text-white text-center text-4xl font-semi-bold mb-10">Competitions</h1>
   <div class="w-full">
-    <div class="w-full flex items-center justify-between px-5">
-      <select class="px-2 py-2 rounded-md text-white bg-indigo-500">
-        <option>All</option>
-        <option>On Going</option>
-        <option>Finished</option>
+    <div class="w-full flex items-center justify-between ">
+      <select (change)="filterCompetitions()" [(ngModel)]="filter" class="px-2 py-2 rounded-md text-white bg-indigo-500">
+        <option value="all">All</option>
+        <option value="ongoing">On Going</option>
+        <option value="finished">Finished</option>
       </select>
       <button class="px-8 py-2 rounded-md text-white bg-indigo-500">Add</button>
     </div>
@@ -35,17 +35,27 @@
 
     </div>-->
     <div class="grid">
-      <div class="p-5 grid lg:grid-cols-3 md:grid-cols-2 gap-5">
-        <div *ngFor="let test of testData" class="hover:cursor-pointer rounded-md border-2 border-blue-900 p-5 flex flex-col items-start justify-center bg-blur-bold">
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-5 py-10">
+        <div *ngFor="let competition of competitions" class="hover:cursor-pointer rounded-md border-2 p-5 flex flex-col items-start justify-center bg-blur-bold">
           <div class="text-white font-light hover:cursor-pointer">
-            <p><span class="font-medium text-white">Code: </span>{{ test.code }}</p>
-            <p><span class="font-medium text-white">Date: </span>{{ test.date }}</p>
-            <p><span class="font-medium text-white">Start time: </span>{{ test.startTime }}</p>
-            <p><span class="font-medium text-white">End time: </span>{{ test.endTime }}</p>
-            <p><span class="font-medium text-white">Location: </span>{{ test.location }}</p>
-            <p><span class="font-medium text-white">Participants number: </span>{{ test.numberOfParticipants}}</p>
+            <p><span class="font-medium text-white">Code: </span>{{ competition.code }}</p>
+            <p><span class="font-medium text-white">Date: </span>{{ competition.date }}</p>
+            <p><span class="font-medium text-white">Start time: </span>{{ competition.startTime }}</p>
+            <p><span class="font-medium text-white">End time: </span>{{ competition.endTime }}</p>
+            <p><span class="font-medium text-white">Location: </span>{{ competition.location }}</p>
+            <p><span class="font-medium text-white">Participants number: </span>{{ competition.participantsNumber}}</p>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="w-full bg-blur-bold rounded-md my-5">
+      <div class="container flex flex-col items-center justify-start px-6 py-2 mx-auto space-y-6 sm:flex-row sm:justify-between sm:space-y-0 overflow-auto hide-scrollbar">
+        <div *ngFor="let page of pages let i = index" class="">
+          <p
+            [ngClass]="{'bg-blue-300 text-white': currentPage == i, 'bg-white text-black': currentPage != i}"
+             (click)="setCurrentPage(i)" class="px-3 py-1 mx-2 transition-colors duration-300 transform rounded-lg cursor-pointer">{{ i + 1}}</p>
+        </div>
+        <p class="text-gray-200 font-light">of {{ totalElements }} records</p>
       </div>
     </div>
   </div>
