@@ -9,55 +9,51 @@
       </select>
       <button routerLink="/new-competition" class="px-8 py-2 rounded-md text-white bg-indigo-500">Add</button>
     </div>
-    <!--<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-      <table class="w-full bg-blur text-sm text-left text-gray-500">
-        <thead class="text-gray-700 bg-blue-200">
-        <tr>
-          <th scope="col" class="px-6 py-3 font-normal text-md text-black">Code</th>
-          <th scope="col" class="px-6 py-3 font-normal text-md text-black">Location</th>
-          <th scope="col" class="px-6 py-3 font-normal text-md text-black">Date</th>
-          <th scope="col" class="px-6 py-3 font-normal text-md text-black">Start Time</th>
-          <th scope="col" class="px-6 py-3 font-normal text-md text-black">End Time</th>
-          <th scope="col" class="px-6 py-3 font-normal text-md text-black">Participants Number</th>
-        </tr>
-        </thead>
-        <tbody class="bg-blur-bold">
-        <tr *ngFor="let data of testData" class="backdrop-blur ">
-          <td [routerLink]="'/competition/' + data.code"  class="px-6 py-4 text-gray-200">{{ data.code }}</td>
-          <td class="px-6 py-4 text-gray-200">{{ data.location }}</td>
-          <td class="px-6 py-4 text-gray-200">{{ data.date }}</td>
-          <td class="px-6 py-4 text-gray-200">{{ data.startTime }}</td>
-          <td class="px-6 py-4 text-gray-200">{{ data.endTime }}</td>
-          <td class="px-6 py-4 text-gray-200">{{ data.numberOfParticipants }}</td>
-        </tr>
-        </tbody>
-      </table>
-
-    </div>-->
     <div class="grid">
       <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-5 py-10">
-        <div *ngFor="let competition of competitions" class="hover:cursor-pointer rounded-md border-2 p-5 flex flex-col items-start justify-center bg-blur-bold">
-          <div class="text-white font-light hover:cursor-pointer">
+        <div *ngFor="let competition of competitions" class="rounded-md border-2 p-5 flex flex-col items-start justify-center bg-blur-bold">
+          <div class="relative text-white font-light hover:cursor-pointer">
             <p><span class="font-medium text-white">Code: </span>{{ competition.code }}</p>
             <p><span class="font-medium text-white">Date: </span>{{ competition.date }}</p>
             <p><span class="font-medium text-white">Start time: </span>{{ competition.startTime }}</p>
             <p><span class="font-medium text-white">End time: </span>{{ competition.endTime }}</p>
             <p><span class="font-medium text-white">Location: </span>{{ competition.location }}</p>
-            <p><span class="font-medium text-white">Participants number: </span>{{ competition.numberOfParticipants}}</p>
+            <p><span class="font-medium text-white">Available places: </span>{{ competition.numberOfParticipants}}</p>
+            <p><span class="font-medium text-white">Participants count: </span>{{ competition.rankings.length}}</p>
+            <button (click)="displayLinkingDialog(competition)" *ngIf="assignMembers(competition.date)"
+                    class="absolute bottom-0 left-1/2 bg-blue-300 border-2 border-violet-600 rounded-md text-white px-2 py-1 opacity-0 transition-opacity duration-200 hover:opacity-100 hover:cursor-pointer">
+              Assign Member
+            </button>
+            <button *ngIf="displayRanking(competition.date)"
+                    class="absolute bottom-0 left-1/2 bg-blue-300 border-2 border-violet-600 rounded-md text-white px-2 py-1 opacity-0 transition-opacity duration-200 hover:opacity-100 hover:cursor-pointer">
+              Display Ranking"
+            </button>
           </div>
         </div>
       </div>
+      <dialog *ngIf="displayDialog" class="absolute inset-0 bg-blur-modal flex flex-col gap-5 p-5 w-full rounded-md md:w-1/3">
+        <div class="flex w-full items-center justify-between">
+          <p class="text-indigo-500 text-xl">select member</p>
+          <p class="text-3xl m-0 hover:cursor-pointer" (click)="displayDialog = false">x</p>
+        </div>
+        <div class="flex w-full gap-5 items-center justify-between">
+          <select [(ngModel)]="memberToLink" class="w-3/4 px-2 py-2 rounded-md text-white bg-indigo-500 focus:outline-none">
+            <option *ngFor="let member of filteredMembers" [ngValue]="member">{{ member.name + " " + member.familyName }}</option>
+          </select>
+          <button (click)="linkMember()"  class="w-1/4 px-2 py-2 rounded-md text-white bg-indigo-500">link</button>
+        </div>
+      </dialog>
     </div>
     <div class="w-full bg-blur-bold rounded-md my-5">
       <div class="container flex flex-col items-center justify-start px-6 py-2 mx-auto space-y-6 sm:flex-row sm:justify-between sm:space-y-0 overflow-auto hide-scrollbar">
-        <div *ngFor="let page of pages let i = index" class="">
+        <div *ngFor="let page of pages let i = index">
           <p
             [ngClass]="{'bg-blue-300 text-white': currentPage == i, 'bg-white text-black': currentPage != i}"
-             (click)="setCurrentPage(i)" class="px-3 py-1 mx-2 transition-colors duration-300 transform rounded-lg cursor-pointer">{{ i + 1}}</p>
+             (click)="setCurrentPage(i)" class="px-3 py-1 mx-2 transition-colors duration-300 transform rounded-lg cursor-pointer">{{ i + 1 }}</p>
         </div>
         <p class="text-gray-200 font-light">of {{ totalElements }} records</p>
       </div>
     </div>
   </div>
-  <div class="p-10"></div>
+  <div class="p-2"></div>
 </section>
