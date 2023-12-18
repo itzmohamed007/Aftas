@@ -19,4 +19,8 @@ export class RankingService {
       competition: competition?.code
     });
   }
+
+  getPodium(code:String|null):Observable<Ranking[]> {
+    return this.http.post<Ranking[]>(`${this.url}/podium/${code}`, {});
+  }
 }

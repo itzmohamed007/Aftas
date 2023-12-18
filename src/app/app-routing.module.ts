@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {CompetitionsComponent} from "./components/competitions/competitions.component";
 import {MembersComponent} from "./components/members/members.component";
 import {NewCompetitionComponent} from "./components/new-competition/new-competition.component";
+import {PodiumComponent} from "./components/podium/podium.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: "new-competition",
     component: NewCompetitionComponent
+  },
+  {
+    path: "podium/:code",
+    component: PodiumComponent
   }
 ];
 

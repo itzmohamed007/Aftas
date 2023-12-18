@@ -1,0 +1,24 @@
+<section class="container mx-auto w-full h-screen p-10 px-20">
+  <h1 class="text-white text-center text-4xl font-semi-bold mb-20">Podium</h1>
+  <div *ngIf="first != null" >
+    <div class="flex items-end justify-center gap-5 flex-wrap">
+      <div class="bg-blur-bold px-10 h-[150px] md:h-[100px] w-full md:w-1/4 flex flex-col items-center justify-start rounded-t-md">
+        <p class="text-xl text-center text-white font-light mt-2">{{ third?.member?.name + ' ' + third?.member?.familyName }}</p>
+        <p class="text-sm text-black font-light">score: {{ third?.score }}</p>
+      </div>
+      <div class="bg-blur-bold px-10 h-[350px] md:h-[300px] w-full md:w-1/4 flex flex-col items-center justify-start rounded-t-md">
+        <p class="text-xl text-center text-white font-light mt-2">{{ first?.member?.name + ' ' + first?.member?.familyName }}</p>
+        <p class="text-sm text-black font-light">score: {{ first?.score }}</p>
+      </div>
+      <div class="bg-blur-bold px-10 h-[250px] md:h-[200px] w-full md:w-1/4 flex flex-col items-center justify-start rounded-t-md">
+        <p class="text-xl text-center text-white font-light mt-2">{{ second?.member?.name + ' ' + second?.member?.familyName }}</p>
+        <p class="text-sm text-black font-light">score: {{ second?.score }}</p>
+      </div>
+    </div>
+    <div class="w-full mx-auto p-5 bg-blur-bold hidden md:block"></div>
+  </div>
+  <div *ngIf="first == null">
+    <p class="text-center text-white bg-red-500 p-1 rounded">Competition Contain no Members!</p>
+  </div>
+  <div class="p-2"></div>
+</section>

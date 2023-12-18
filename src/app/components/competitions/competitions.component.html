@@ -24,9 +24,9 @@
                     class="absolute bottom-0 left-1/2 bg-blue-300 border-2 border-violet-600 rounded-md text-white px-2 py-1 opacity-0 transition-opacity duration-200 hover:opacity-100 hover:cursor-pointer">
               Assign Member
             </button>
-            <button *ngIf="displayRanking(competition.date)"
+            <button *ngIf="displayRanking(competition.date)" [routerLink]="'../podium/' + competition.code"
                     class="absolute bottom-0 left-1/2 bg-blue-300 border-2 border-violet-600 rounded-md text-white px-2 py-1 opacity-0 transition-opacity duration-200 hover:opacity-100 hover:cursor-pointer">
-              Display Ranking"
+              Display Podium
             </button>
           </div>
         </div>
