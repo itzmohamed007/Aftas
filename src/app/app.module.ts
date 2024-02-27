@@ -11,6 +11,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NewCompetitionComponent } from './components/new-competition/new-competition.component';
 import {DatePipe} from "@angular/common";
 import { PodiumComponent } from './components/podium/podium.component';
+import { NewMemberComponent } from './components/new-member/new-member.component';
+import { CompetitionsTableComponent } from './components/competitions-table/competitions-table.component';
+import { ManagerDashboardComponent } from './components/manager-dashboard/manager-dashboard.component';
+import { UsersTableComponent } from './components/users-table/users-table.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { PodiumComponent } from './components/podium/podium.component';
     CompetitionsComponent,
     MembersComponent,
     NewCompetitionComponent,
-    PodiumComponent
+    PodiumComponent,
+    NewMemberComponent,
+    CompetitionsTableComponent,
+    ManagerDashboardComponent,
+    UsersTableComponent
   ],
   imports: [
     BrowserModule,
