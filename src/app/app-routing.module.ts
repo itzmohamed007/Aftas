@@ -4,6 +4,8 @@ import {CompetitionsComponent} from "./components/competitions/competitions.comp
 import {MembersComponent} from "./components/members/members.component";
 import {NewCompetitionComponent} from "./components/new-competition/new-competition.component";
 import {PodiumComponent} from "./components/podium/podium.component";
+import {NewMemberComponent} from "./components/new-member/new-member.component";
+import { ManagerDashboardComponent } from './components/manager-dashboard/manager-dashboard.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,14 @@ const routes: Routes = [
   {
     path: "podium/:code",
     component: PodiumComponent
+  },
+  {
+    path: "new-member",
+    component: NewMemberComponent
+  },
+  {
+    path: "manager/dashboard",
+    component: ManagerDashboardComponent
   }
 ];
 

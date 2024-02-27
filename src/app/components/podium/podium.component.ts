@@ -25,9 +25,6 @@ export class PodiumComponent implements OnInit{
         this.first = rankings[0];
         this.second = rankings[1];
         this.third = rankings[2];
-        console.log("first " + this.first.rank);
-        console.log("second " + this.second.rank);
-        console.log("third " + this.third.rank);
       },
       error: error => {
         console.log("an error occurred while fetching podium");

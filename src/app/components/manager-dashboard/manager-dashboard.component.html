@@ -1,10 +1,12 @@
 <section class="container mx-auto w-full h-screen p-10">
   <h1 class="text-white text-center text-4xl font-semi-bold mb-10">Users</h1>
-  <div class="w-full">
-    <div class="w-full flex items-center justify-center my-20">
-      <app-users-table class="w-full" [users]="users"></app-users-table>
-    </div>
-
+  <div class="w-full flex items-center justify-center my-20">
+    <app-users-table
+      class="w-full"
+      [users]="users"
+    ></app-users-table>
+  </div>
+  <div class="w-fit">
     <!-- <div class="w-full bg-blur-bold rounded-md my-5">
         <div
           class="container rounded bg-slate-200 flex flex-col items-center justify-start px-6 py-2 mx-auto space-y-6 sm:flex-row sm:justify-between sm:space-y-0 overflow-auto hide-scrollbar"

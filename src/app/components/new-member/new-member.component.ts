@@ -22,6 +22,7 @@ export class NewMemberComponent {
       nationality: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       identityDocument: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       identityNumber: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
+      accessionDate: ['', [Validators.required]],
     });
   }
 

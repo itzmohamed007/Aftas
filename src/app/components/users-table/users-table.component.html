@@ -1,39 +1,38 @@
-<div class="overflow-x-auto">
-  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table
-      class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
-    >
-      <thead class="text-xs font-light text-gray-700 uppercase bg-gray-50">
-        <tr>
-          <th scope="col" class="px-6 py-3 font-normal">Number</th>
-          <th scope="col" class="px-6 py-3 font-normal">Identity Number</th>
-          <th scope="col" class="px-6 py-3 font-normal">Name</th>
-          <th scope="col" class="px-6 py-3 font-normal">Email</th>
-          <th scope="col" class="px-6 py-3 font-normal">Nationality</th>
-          <th scope="col" class="px-6 py-3 font-normal">Role</th>
-          <th scope="col" class="px-6 py-3 font-normal">Accession Date</th>
-          <th scope="col" class="px-6 py-3 font-normal">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="bg-slate-200 text-black border-b border-white">
-          <td class="text-sm px-6 py-4 font-light">null</td>
-          <td class="text-sm px-6 py-4 font-light">null</td>
-          <td class="text-sm px-6 py-4 font-light">null</td>
-          <td class="text-sm px-6 py-4 font-light">null</td>
-          <td class="text-sm px-6 py-4 font-light">null</td>
-          <td class="text-sm px-6 py-4 font-light">null</td>
-          <td class="text-sm px-6 py-4 font-light">null</td>
-          <td class="flex p-5 items-center justify-center gap-3">
-            <button class="bg-green-300 text-white rounded py-1 px-5">
-              Accept
-            </button>
-            <button class="bg-red-300 text-white rounded py-1 px-5">
-              Refuse
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="shadow-md sm:rounded-lg">
+  <table
+    class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+  >
+    <thead class="text-xs font-light text-gray-700 uppercase bg-gray-50">
+      <tr>
+        <th scope="col" class="px-6 py-3 font-normal">Number</th>
+        <th scope="col" class="px-6 py-3 font-normal">Name</th>
+        <th scope="col" class="px-6 py-3 font-normal">Email</th>
+        <th scope="col" class="px-6 py-3 font-normal">Nationality</th>
+        <th scope="col" class="px-6 py-3 font-normal">Role</th>
+        <th scope="col" class="px-6 py-3 font-normal">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let user of users"
+        class="bg-slate-200 text-black border-b border-white"
+      >
+        <td class="text-sm px-6 py-4 font-light">{{ user.num }}</td>
+        <td class="text-sm px-6 py-4 font-light">
+          {{ user.name + " " + user.familyName }}
+        </td>
+        <td class="text-sm px-6 py-4 font-light">{{ user.email }}</td>
+        <td class="text-sm px-6 py-4 font-light">{{ user.nationality }}</td>
+        <td class="text-sm px-6 py-4 font-light">{{ user.role }}</td>
+        <td class="flex p-5 items-center justify-center gap-3">
+          <button class="bg-green-300 text-white rounded py-1 px-5">
+            Accept
+          </button>
+          <button class="bg-red-300 text-white rounded py-1 px-5">
+            Refuse
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

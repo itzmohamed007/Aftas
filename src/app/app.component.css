@@ -1,17 +1,19 @@
 * {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+*::-webkit-scrollbar {
+  display: none;
+}
 .bg-image {
-  background-image: url('../assets/imgs/background.png');
+  background-image: url("../assets/imgs/ocean (1).webp");
   background-size: cover;
   background-position: center;
   width: 100%;
 }
 .bg-blur {
   background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
 }
 .bg-blur-bold {
   backdrop-filter: blur(64px);

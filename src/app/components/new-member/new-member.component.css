@@ -1,0 +1,7 @@
+.bg-blur-bold {
+  background-color: rgba(126, 117, 255, 0.5);
+  backdrop-filter: blur();
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

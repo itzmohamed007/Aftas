@@ -12,7 +12,7 @@
 
     <div class="mt-12 md:mt-4">
       <label class="font-light text-gray-200">Family Name</label>
-      <input formControlName="familyName" type="text" class="w-full placeholder:font-thin border focus:outline-none border-black to-white rounded-md px-4 pt-2 pb-2">
+      <input formControlName="familyName" type="text" placeholder="Member family name" class="w-full placeholder:font-thin border focus:outline-none border-black to-white rounded-md px-4 pt-2 pb-2">
       <div *ngIf="memberForm.get('familyName')?.hasError('required') && memberForm.get('familyName')?.touched" class="text-white p-1 bg-red-500 text-xs mt-1 rounded">Family name is required.</div>
       <div *ngIf="memberForm.get('familyName')?.hasError('minlength') && memberForm.get('familyName')?.touched" class="text-white p-1 bg-red-500 text-xs mt-1 rounded">Family name must be at least 3 characters long.</div>
       <div *ngIf="memberForm.get('familyName')?.hasError('maxlength') && memberForm.get('familyName')?.touched" class="text-white p-1 bg-red-500 text-xs mt-1 rounded">Family name must not exceed 50 characters.</div>
@@ -20,12 +20,7 @@
 
     <div class="mt-12 md:mt-4">
       <label class="font-light text-gray-200">Nationality</label>
-      <select formControlName="nationality" class="w-full placeholder:font-thin border focus:outline-none border-black to-white rounded-md px-4 pt-2 pb-2">
-        <option>cin</option>
-        <option>passport</option>
-        <option>residence card</option>
-      </select>
-      <input formControlName="nationality" type="text" class="w-full placeholder:font-thin border focus:outline-none border-black to-white rounded-md px-4 pt-2 pb-2">
+      <input formControlName="nationality" placeholder="Member nationality" type="text" class="w-full placeholder:font-thin border focus:outline-none border-black to-white rounded-md px-4 pt-2 pb-2">
       <div *ngIf="memberForm.get('nationality')?.hasError('required') && memberForm.get('nationality')?.touched" class="text-white p-1 bg-red-500 text-xs mt-1 rounded">Nationality is required.</div>
       <div *ngIf="memberForm.get('nationality')?.hasError('minlength') && memberForm.get('nationality')?.touched" class="text-white p-1 bg-red-500 text-xs mt-1 rounded">Nationality must be at least 3 characters long.</div>
       <div *ngIf="memberForm.get('nationality')?.hasError('maxlength') && memberForm.get('nationality')?.touched" class="text-white p-1 bg-red-500 text-xs mt-1 rounded">Nationality must not exceed 50 characters.</div>
@@ -33,15 +28,19 @@
 
     <div class="mt-12 md:mt-4">
       <label class="font-light text-gray-200">Identity Document</label>
-      <input formControlName="identityDocument" type="text" class="w-full placeholder:font-thin border focus:outline-none border-black to-white rounded-md px-4 pt-2 pb-2">
-      <div *ngIf="memberForm.get('identityDocument')?.hasError('required') && memberForm.get('identityDocument')?.touched" class="text-white p-1 bg-red-500 text-xs mt-1 rounded">Identity document is required.</div>
-      <div *ngIf="memberForm.get('identityDocument')?.hasError('minlength') && memberForm.get('identityDocument')?.touched" class="text-white p-1 bg-red-500 text-xs mt-1 rounded">Identity document must be at least 3 characters long.</div>
-      <div *ngIf="memberForm.get('identityDocument')?.hasError('maxlength') && memberForm.get('identityDocument')?.touched" class="text-white p-1 bg-red-500 text-xs mt-1 rounded">Identity document must not exceed 50 characters.</div>
+      <select formControlName="identityDocument" class="w-full placeholder:font-thin border focus:outline-none border-black to-white rounded-md px-4 pt-2 pb-2">
+        <option>cin</option>
+        <option>passport</option>
+        <option>residence card</option>
+      </select>
+      <div *ngIf="memberForm.get('identityDocument')?.hasError('required') && memberForm.get('identityDocument')?.touched" class="text-white p-1 bg-red-500 text-xs mt-1 rounded">Identity Document is required.</div>
+      <div *ngIf="memberForm.get('identityDocument')?.hasError('minlength') && memberForm.get('identityDocument')?.touched" class="text-white p-1 bg-red-500 text-xs mt-1 rounded">Identity Document must be at least 3 characters long.</div>
+      <div *ngIf="memberForm.get('identityDocument')?.hasError('maxlength') && memberForm.get('identityDocument')?.touched" class="text-white p-1 bg-red-500 text-xs mt-1 rounded">Identity Document must not exceed 50 characters.</div>
     </div>
 
     <div class="mt-12 md:mt-4">
       <label class="font-light text-gray-200">Identity Number</label>
-      <input formControlName="identityNumber" type="text" placeholder="Competition price" class="w-full placeholder:font-thin border focus:outline-none border-black to-white rounded-md px-4 pt-2 pb-2">
+        <input formControlName="identityNumber" type="text" placeholder="Competition price" class="w-full placeholder:font-thin border focus:outline-none border-black to-white rounded-md px-4 pt-2 pb-2">
       <div *ngIf="memberForm.get('identityNumber')?.hasError('required') && memberForm.get('identityNumber')?.touched" class="text-white p-1 bg-red-500 text-xs mt-1 rounded">Identity number is required.</div>
       <div *ngIf="memberForm.get('identityNumber')?.hasError('minlength') && memberForm.get('identityNumber')?.touched" class="text-white p-1 bg-red-500 text-xs mt-1 rounded">Identity number must be at least 3 characters long.</div>
       <div *ngIf="memberForm.get('identityNumber')?.hasError('maxlength') && memberForm.get('identityNumber')?.touched" class="text-white p-1 bg-red-500 text-xs mt-1 rounded">Identity number must not exceed 50 characters.</div>
