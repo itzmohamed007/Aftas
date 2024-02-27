@@ -15,6 +15,8 @@ import { NewMemberComponent } from './components/new-member/new-member.component
 import { CompetitionsTableComponent } from './components/competitions-table/competitions-table.component';
 import { ManagerDashboardComponent } from './components/manager-dashboard/manager-dashboard.component';
 import { UsersTableComponent } from './components/users-table/users-table.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { UsersTableComponent } from './components/users-table/users-table.compon
     NewMemberComponent,
     CompetitionsTableComponent,
     ManagerDashboardComponent,
-    UsersTableComponent
+    UsersTableComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

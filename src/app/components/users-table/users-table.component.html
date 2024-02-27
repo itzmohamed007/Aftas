@@ -9,6 +9,7 @@
         <th scope="col" class="px-6 py-3 font-normal">Email</th>
         <th scope="col" class="px-6 py-3 font-normal">Nationality</th>
         <th scope="col" class="px-6 py-3 font-normal">Role</th>
+        <th scope="col" class="px-6 py-3 font-normal">Accession Date</th>
         <th scope="col" class="px-6 py-3 font-normal">Actions</th>
       </tr>
     </thead>
@@ -24,12 +25,14 @@
         <td class="text-sm px-6 py-4 font-light">{{ user.email }}</td>
         <td class="text-sm px-6 py-4 font-light">{{ user.nationality }}</td>
         <td class="text-sm px-6 py-4 font-light">{{ user.role }}</td>
+        <td class="text-sm px-6 py-4 font-light">{{ user.accessionDate }}</td>
         <td class="flex p-5 items-center justify-center gap-3">
-          <button class="bg-green-300 text-white rounded py-1 px-5">
-            Accept
-          </button>
-          <button class="bg-red-300 text-white rounded py-1 px-5">
-            Refuse
+          <button
+            (click)="unlockAccount(user.num)"
+            *ngIf="user.locked"
+            class="bg-green-300 text-white rounded py-1 px-5"
+          >
+            Unlock
           </button>
         </td>
       </tr>
