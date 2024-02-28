@@ -1,0 +1,150 @@
+<section class="flex justify-center items-center h-screen bg-blue-100">
+  <div class="bg-white rounded-lg shadow-lg w-full max-w-xl p-8 space-y-2">
+    <h1 class="text-5xl font-normal text-slate-200 text-center">Aftas</h1>
+    <h2 class="text-xl font-light text-gray-900 text-center pb-10">
+      Create an account
+    </h2>
+    <form
+      class=""
+      autocomplete="off"
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="grid grid-cols-2 gap-5 mb-5">
+        <div class="grid-cols-1">
+          <!-- First Name -->
+          <div class="relative mb-3">
+            <input
+              formControlName="name"
+              type="text"
+              id="floating_outlined"
+              class="text-black font-light block border border-gray-300 px-2.5 pb-2.5 pt-4 w-full text-sm bg-transparent rounded-lg border-1 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+              placeholder=" "
+            />
+            <label
+              for="floating_outlined"
+              class="absolute font-light text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-gray-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+              >First Name</label
+            >
+          </div>
+          <!-- Email Address -->
+          <div class="relative mb-3">
+            <input
+              formControlName="email"
+              type="email"
+              id="floating_outlined"
+              class="text-black font-light block border border-gray-300 px-2.5 pb-2.5 pt-4 w-full text-sm bg-transparent rounded-lg border-1 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+              placeholder=" "
+            />
+            <label
+              for="floating_outlined"
+              class="absolute font-light text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-gray-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+              >Email Address</label
+            >
+          </div>
+          <!-- Identity Document -->
+          <div class="relative mb-3">
+            <select
+              formControlName="identityDocument"
+              id="floating_outlined"
+              class="text-black font-light block border border-gray-300 px-2.5 pb-2.5 pt-4 w-full text-sm bg-transparent rounded-lg border-1 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+            >
+              <option value="CIN">Cin</option>
+              <option value="PASSPORT">Passport</option>
+              <option value="RESIDENCE_CARD">Residence Card</option>
+            </select>
+            <label
+              for="floating_outlined"
+              class="absolute font-light text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-gray-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+              >Identity Document</label
+            >
+          </div>
+          <!-- Nationality -->
+          <div class="relative mb-3">
+            <input
+              formControlName="nationality"
+              type="text"
+              id="floating_outlined"
+              class="text-black font-light block border border-gray-300 px-2.5 pb-2.5 pt-4 w-full text-sm bg-transparent rounded-lg border-1 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+              placeholder=" "
+            />
+            <label
+              for="floating_outlined"
+              class="absolute font-light text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-gray-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+              >Nationality</label
+            >
+          </div>
+        </div>
+        <div class="grid-cols-1">
+          <!-- Last Name -->
+          <div class="relative mb-3">
+            <input
+              formControlName="familyName"
+              type="text"
+              id="floating_outlined"
+              class="text-black font-light block border border-gray-300 px-2.5 pb-2.5 pt-4 w-full text-sm bg-transparent rounded-lg border-1 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+              placeholder=" "
+            />
+            <label
+              for="floating_outlined"
+              class="absolute font-light text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-gray-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+              >Last Name</label
+            >
+          </div>
+          <!-- Password -->
+          <div class="relative mb-3">
+            <input
+              formControlName="password"
+              type="text"
+              id="floating_outlined"
+              class="text-black font-light block border border-gray-300 px-2.5 pb-2.5 pt-4 w-full text-sm bg-transparent rounded-lg border-1 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+              placeholder=" "
+            />
+            <label
+              for="floating_outlined"
+              class="absolute font-light text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-gray-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+              >Password</label
+            >
+          </div>
+          <!-- Identity Number -->
+          <div class="relative mb-3">
+            <input
+              formControlName="identityNumber"
+              type="text"
+              id="floating_outlined"
+              class="text-black font-light block border border-gray-300 px-2.5 pb-2.5 pt-4 w-full text-sm bg-transparent rounded-lg border-1 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+              placeholder=" "
+            />
+            <label
+              for="floating_outlined"
+              class="absolute font-light text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-gray-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+              >Identity Number</label
+            >
+          </div>
+          <!-- Role -->
+          <div class="relative mb-3">
+            <select
+              formControlName="role"
+              id="floating_outlined"
+              class="text-black font-light block border border-gray-300 px-2.5 pb-2.5 pt-4 w-full text-sm bg-transparent rounded-lg border-1 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+            >
+              <option value="ROLE_MEMBER">Adhérant</option>
+              <option value="ROLE_JURY">Jury</option>
+            </select>
+            <label
+              for="floating_outlined"
+              class="absolute font-light text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-gray-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+              >Role</label
+            >
+          </div>
+        </div>
+      </div>
+      <button
+        class="w-full bg-slate-200 hover:bg-slate-400 hover:text-white focus:ring-4 focus:outline-none focus:ring-primary-300 text-black font-light rounded-lg py-3 text-md"
+        type="submit"
+      >
+        Sign in
+      </button>
+    </form>
+  </div>
+</section>

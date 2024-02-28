@@ -1,17 +1,20 @@
 import { Injectable, inject } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UsersService {
-
-  constructor() { }
+  constructor() {}
   private http = inject(HttpClient);
-  private url = "http://localhost:8080/api/users";
+  private url = 'http://localhost:8080/api/users';
 
-  getLockedAccounts():Observable<any[]> {
-    return this.http.get<any[]>(`${this.url}/locked`);
+  getAccounts(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.url}`);
+  }
+
+  unlockAccount(num: number): Observable<any> {
+    return this.http.patch<any>(`${this.url}/unlock/${num}`, {});
   }
 }
