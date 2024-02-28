@@ -8,11 +8,13 @@ import {NewMemberComponent} from "./components/new-member/new-member.component";
 import { ManagerDashboardComponent } from './components/manager-dashboard/manager-dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { roleGuard } from './role.guard';
 
 const routes: Routes = [
   {
     path: "competitions",
     component: CompetitionsComponent,
+    canActivate: [roleGuard]
   },
   {
     path: "members",

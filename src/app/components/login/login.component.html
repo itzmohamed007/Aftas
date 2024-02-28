@@ -4,10 +4,16 @@
     <h2 class="text-xl font-light text-gray-900 text-center">
       Sign in to your account
     </h2>
-    <form class="space-y-4" autocomplete="off">
+    <form
+      class="space-y-4"
+      autocomplete="off"
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+    >
       <div>
         <div class="relative">
           <input
+            [formControlName]="'email'"
             type="text"
             id="floating_outlined"
             class="text-black font-light block border border-gray-300 px-2.5 pb-2.5 pt-4 w-full text-sm bg-transparent rounded-lg border-1 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
@@ -23,6 +29,7 @@
       <div>
         <div class="relative">
           <input
+            [formControlName]="'password'"
             type="password"
             id="floating_outlined"
             class="text-black block border border-gray-300 px-2.5 pb-2.5 pt-4 w-full text-sm bg-transparent rounded-lg border-1 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
@@ -42,5 +49,9 @@
         Sign in
       </button>
     </form>
+    <p class="text-left font-light text-sm text-black">
+      don't have an account ?
+      <a href="/auth/register" class="font-normal">register here</a>
+    </p>
   </div>
 </section>
